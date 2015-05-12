@@ -4,7 +4,7 @@ Version=1
 
 [Preferences]
 Username=
-Password=2662
+Password=2170
 Database=
 DateFormat=
 CommitCount=0
@@ -34,14 +34,14 @@ Master=
 Name=AUTHOR
 Type=VARCHAR2
 Size=38
-Data=FirstName + ' ' + LastName
+Data=List('R. Goren', 'R. Bar Haim', 'R. Kuk', 'Moses', 'Serach Bat Asher', 'R. Dasht')
 Master=
 
 [Record]
 Name=CATEGORY
 Type=VARCHAR2
 Size=38
-Data=Elements.Name
+Data=List('Torah', 'Tanach', 'Talmud', 'Emuna', 'Halacha', 'History', 'Musar', 'Stories', 'Mishna', 'Midrash', 'Agada')
 Master=
 
 [Record]
@@ -55,7 +55,7 @@ Master=
 Name=PUBLISHER
 Type=VARCHAR2
 Size=38
-Data=Company
+Data=List('HaRav Kuk', 'Maaliut', 'Har Etzion', 'Koren', 'Frenkel', 'ArtScroll')
 Master=
 
 [Record]

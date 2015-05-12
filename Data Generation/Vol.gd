@@ -4,7 +4,7 @@ Version=1
 
 [Preferences]
 Username=
-Password=2020
+Password=2856
 Database=
 DateFormat=
 CommitCount=0
@@ -27,7 +27,7 @@ Master=
 Name=ADDRESS
 Type=VARCHAR2
 Size=38
-Data=Address1
+Data=Address1 + ', ' + List(Tel Aviv,Jerusalem,Haifa,Beer Sheva,Petah Tiqua,Ramat Gan, Tveria, Efrat,Ariel, Eilat,Ashkelon)
 Master=
 
 [Record]
@@ -48,7 +48,7 @@ Master=
 Name=ORGANIZATION
 Type=VARCHAR2
 Size=38
-Data=Company
+Data=List('Yad Sarah', 'M.D.A', 'Or Yarok', 'Paamonim', 'Hasdey Neomi', 'Latet', 'Zichron Menachem')
 Master=
 
 [Record]
