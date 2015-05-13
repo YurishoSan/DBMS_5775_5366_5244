@@ -4,7 +4,7 @@ Version=1
 
 [Preferences]
 Username=
-Password=2856
+Password=2225
 Database=
 DateFormat=
 CommitCount=0
@@ -39,8 +39,8 @@ Master=
 
 [Record]
 Name=TIMEOFDAY
-Type=TIMESTAMP(6)
-Size=11
+Type=VARCHAR2
+Size=5
 Data=Random(6, 22) + ':' + Random(0,5) + '0'
 Master=
 

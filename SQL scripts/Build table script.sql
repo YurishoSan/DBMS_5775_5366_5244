@@ -66,7 +66,7 @@ CREATE TABLE VolunteerGroup (
     VGID           NUMBER(38) NOT NULL,
     Address        VARCHAR2(38),
     DayOfWeek      NUMBER(38) NOT NULL,
-    TimeOfDay      TIMESTAMP NOT NULL,
+    TimeOfDay      VARCHAR2(5) NOT NULL,
     Organization   VARCHAR2(38),
     Details        VARCHAR2(256),
     Phone          VARCHAR2(12),
