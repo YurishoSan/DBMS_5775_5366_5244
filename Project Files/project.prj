@@ -2,10 +2,10 @@ PL/SQL Developer Project
 
 [Options]
 AutoConnect=0
-Username=system
-Password=24593741370336973691
-Database=XE
-ConnectAs=Normal
+Username=
+Password=2499
+Database=
+ConnectAs=
 Edition=
 Workspace=
 HaltAfterError=0
@@ -15,7 +15,7 @@ ShowItems=0
 
 [History]
 Programs=
-SQL Scripts=
+SQL Scripts=G:\Projects\DBMS\DBMS_5775_5366_5244\SQL scripts
 Report Files=
 Test Scripts=
 Command Scripts=
@@ -29,6 +29,3 @@ Diagram Files=
 [Files]
 
 [Notes]
-{\rtf1\fbidis\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Tahoma;}}
-\viewkind4\uc1\pard\ltrpar\lang1037\f0\fs16 
-\par }
