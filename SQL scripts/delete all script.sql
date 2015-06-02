@@ -1,4 +1,4 @@
-DELETE Rav;
+DELETE Studies;
 DELETE Book;
 DELETE VolunteerGroup;
 DELETE BeitMidrashHall;
