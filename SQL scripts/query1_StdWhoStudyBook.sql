@@ -6,5 +6,5 @@ StdLearnBook AS
      SELECT Teaches.bookID, Book.Name AS bookName, stdID, StdAtRav.Name As StudentName FROM StdAtRav INNER JOIN Teaches ON StdAtRav.ravID = Teaches.ravID INNER JOIN Book ON Teaches.bookID = Book.bookID
 )
 
-SELECT bookID, bookName, LISTAGG(stdID || ' ' || studentName,',') WITHIN GROUP (ORDER BY stdID) AS studentLearning
+SELECT bookID, bookName, LISTAGG(stdID || ' ' || studentName,', ') WITHIN GROUP (ORDER BY stdID) AS studentLearning
 FROM StdLearnBook GROUP BY bookID, bookName
