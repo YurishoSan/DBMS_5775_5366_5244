@@ -8,5 +8,3 @@ StdLearnBook AS
 
 SELECT bookID, bookName, LISTAGG(stdID || ' ' || studentName,',') WITHIN GROUP (ORDER BY stdID) AS studentLearning
 FROM StdLearnBook GROUP BY bookID, bookName
- 
-      

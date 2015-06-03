@@ -1,12 +1,12 @@
-WITH StdAtRav AS (SELECT stdid, Name ,Rav.ravid FROM Student INNER JOIN Rav ON Student.ravid = Rav.ravid),
+WITH StdAtRav AS (SELECT stdID, Name ,Rav.ravID FROM Student INNER JOIN Rav ON Student.ravID = Rav.ravID),
 StdLearnBook AS
 (
-     SELECT Studies.bookid, Book.Name AS bookName, Studies.stdid, Student.Name As StudentName FROM Studies INNER JOIN Student ON Student.Stdid = Studies.Stdid INNER JOIN Book ON Studies.Bookid = Book.bookid
+     SELECT Studies.bookID, Book.Name AS bookName, Studies.stdID, Student.Name As StudentName FROM Studies INNER JOIN Student ON Student.StdID = Studies.StdID INNER JOIN Book ON Studies.BookID = Book.bookID
      UNION
-     SELECT Teaches.bookid, Book.Name AS bookName, stdid, StdAtRav.Name As StudentName FROM StdAtRav INNER JOIN Teaches ON StdAtRav.ravid = Teaches.ravid INNER JOIN Book ON Teaches.Bookid = Book.bookid
+     SELECT Teaches.bookID, Book.Name AS bookName, stdID, StdAtRav.Name As StudentName FROM StdAtRav INNER JOIN Teaches ON StdAtRav.ravID = Teaches.ravID INNER JOIN Book ON Teaches.bookID = Book.bookID
 )
 
-SELECT bookid, bookname, LISTAGG(stdid || ' ' || StudentName,',') WITHIN GROUP (ORDER BY stdid) AS StudentLearning
-FROM StdLearnBook GROUP BY bookid, bookname
+SELECT bookID, bookName, LISTAGG(stdID || ' ' || studentName,',') WITHIN GROUP (ORDER BY stdID) AS studentLearning
+FROM StdLearnBook GROUP BY bookID, bookName
  
       
