@@ -1,0 +1,6 @@
+CREATE INDEX shelfNum_idx
+ON Book (shelfnum);
+
+CREATE INDEX category_idx
+ON Book (Category);
+
