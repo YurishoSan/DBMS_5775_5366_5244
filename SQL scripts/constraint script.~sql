@@ -1,0 +1,2 @@
+ALTER TABLE BeitMidrashHall
+ADD CONSTRAINT chk_bmh_ws_binary CHECK (womanSection = 0 OR womanSection = 1)

@@ -1,0 +1,3 @@
+UPDATE BeitMidrashHall
+SET womenSection=2
+WHERE bmh_ID=1
