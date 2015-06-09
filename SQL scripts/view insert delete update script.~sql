@@ -1,0 +1,2 @@
+INSERT INTO view_rav
+VALUES(1111, 'R. Ezra Dasht', 1111, 'Banana Man', 'Someplace 5, Somewhere', '056-3222576', 'Dasht Hall', 'Hasdey Neomi', '0567160768', 'aluminum, molybdenum')
