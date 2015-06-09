@@ -1,2 +1,2 @@
-SELECT * FROM view_VolGroup21979;
-SELECT * FROM view_Rav205465212
+SELECT * FROM view_VolGroup;
+SELECT * FROM view_Rav
