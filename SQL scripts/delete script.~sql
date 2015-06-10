@@ -1,0 +1,2 @@
+DELETE FROM Book
+WHERE bookID = 86779986;
