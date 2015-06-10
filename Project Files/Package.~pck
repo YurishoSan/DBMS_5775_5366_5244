@@ -1,0 +1,71 @@
+PL/SQL Developer Test script 3.0
+67
+create or replace package Package is
+
+  -- Author  : YURISHO
+  -- Created : 09/06/2015 23:26:18
+  -- Purpose : 
+
+  -- Public type declarations
+  --type <TypeName> is <Datatype>;
+
+  -- Public constant declarations
+  --<ConstantName> constant <Datatype> := <Value>;
+
+  -- Public variable declarations
+  --<VariableName> <Datatype>;
+
+  -- Public function and procedure declarations
+  function BooksByPublisherStudy(publisher_in in varchar2) return number;
+
+end Package;
+/
+create or replace package body Package is
+
+  -- Private type declarations
+  --type <TypeName> is <Datatype>;
+
+  -- Private constant declarations
+  --<ConstantName> constant <Datatype> := <Value>;
+
+  -- Private variable declarations
+  --<VariableName> <Datatype>;
+
+  -- Function and procedure implementations
+  function BooksByPublisherStudy(publisher_in in varchar2) return number is
+    cursor cBook is
+      SELECT bookID AS ID FROM book WHERE publisher = publisher_in;
+    total_percentage number := 0;
+    total_students   integer;
+    rec_percentage   number;
+  begin
+    SELECT COUNT(*) INTO total_students FROM Student;
+  
+    for book_rec in cBook loop
+      WITH StudiesTeaches AS
+       (SELECT DISTINCT Studies.bookID AS bookID
+          FROM Teaches
+         INNER JOIN Studies
+            ON Teaches.bookID = Studies.Bookid)
+      SELECT SUM(CASE
+                   WHEN bookID = book_rec.ID THEN
+                    1
+                   ELSE
+                    0
+                 END) / COUNT(*) * 100
+        INTO rec_percentage
+        FROM StudiesTeaches;
+    
+      total_percentage := total_percentage + rec_percentage;
+    end loop;
+  
+    return total_percentage;
+  end;
+
+begin
+  dbms_output.put_line('Persent of students who study or being taught from publisher Harav Kuk: ' ||
+                       BooksByPublisherStudy('HaRav Kuk'));
+end Package;
+/
+0
+0
