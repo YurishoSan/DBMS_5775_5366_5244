@@ -1,3 +1,7 @@
-UPDATE Rav
-SET bankaccoutnum = 08311248543
-WHERE ravID = 154126548;
+UPDATE Student
+SET RAVID = '126785146'
+WHERE RAVID = '154126548';
+
+UPDATE Book
+SET shelfNum = '001'
+WHERE Book.Category = 'Torah'
