@@ -1,5 +1,3 @@
-PL/SQL Developer Test script 3.0
-67
 create or replace package Package is
 
   -- Author  : YURISHO
@@ -63,9 +61,6 @@ create or replace package body Package is
   end;
 
 begin
-  dbms_output.put_line('Persent of students who study or being taught from publisher Harav Kuk: ' ||
-                       BooksByPublisherStudy('HaRav Kuk'));
+  null;
 end Package;
 /
-0
-0
