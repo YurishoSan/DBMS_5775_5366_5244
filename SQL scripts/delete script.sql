@@ -1,2 +1,5 @@
 DELETE FROM Book
-WHERE bookID = 86779986;
+WHERE pubYear < 1920 AND category != 'Torah';
+
+DELETE FROM VolunteerGroup
+WHERE NOT EXISTS (SELECT * FROM Student WHERE VolunteerGroup.vgID = Student.vgID)
