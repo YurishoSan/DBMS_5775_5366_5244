@@ -7,18 +7,18 @@ declare
   name_student varchar2(38);
   name_book    varchar2(38);
 begin
-  --SELECT Student.name, Book.name
-    --INTO name_student, name_book
-    --FROM Student
-   --INNER JOIN Studies
-     -- ON Student.stdID = Studies.Stdid
-   --INNER JOIN Book
-     -- ON Studies.bookID = Book.bookID
-   --WHERE Studies.stdID = :old.stdID;
-  --dbms_output.put_line(SYSTIMESTAMP || ' - ' || USER ||
-    --                   ' deleted record between: ' || name_student ||
-      --                 ' and ' || name_book);
-      dbms_output.put_line(SYSTIMESTAMP || ' - ' || USER ||
-                       ' deleted record between: ');
+  SELECT Student.name
+    INTO name_student
+    FROM Student
+   WHERE Student.StdID = :old.stdID;
+
+  SELECT Book.name
+    INTO name_book
+    FROM Book
+   WHERE Book.bookID = :old.bookID;
+
+  dbms_output.put_line(SYSTIMESTAMP || ' - ' || USER ||
+                       ' deleted record between: ' || name_student ||
+                       ' and ' || name_book);
 end RecordStudiesDelete;
 /
