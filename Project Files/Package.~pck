@@ -15,7 +15,10 @@ create or replace package Package is
 
   -- Public function and procedure declarations
   function BooksByPublisherStudy(publisher_in in varchar2) return number;
+  function SetWomanSectionCapacity(id in number) return number;
+
   procedure ReportRavClasses(id in number);
+  procedure ReportWhenVolForRav(id in number);
 
 end Package;
 /
@@ -53,6 +56,34 @@ create or replace package body Package is
     return total_percentage;
   end;
 
+  --Input: beit midrash id
+  --Output: calculates what woman section capacity should be, updates the value, and returns it.
+  -- if womenSection is 0 (false) then returns -1.
+  function SetWomanSectionCapacity(id in number) return number is
+  
+    WOMAN_SECTION_PERCENT CONSTANT number := 0.2;
+    capacity      number;
+    womenSection  char(1);
+    womenCapacity number;
+  
+  begin
+  
+    SELECT capacity, womenSection
+      INTO capacity, womenSection
+      FROM BeitMidrashHall
+     Where bmhID = id;
+  
+    if womenSection = 1 then
+      womenCapacity := capacity * WOMAN_SECTION_PERCENT;
+      UPDATE BeitMidrashHall
+         SET Womensectioncapacity = womenCapacity
+       WHERE bmhID = id;
+      return womenCapacity;
+    else
+      return - 1;
+    end if;
+  end;
+
   --Input: ravID
   --Prints: * list of beit midrash halls rav teaches in.
   --        * list of classrooms rav teaches in.
@@ -73,11 +104,9 @@ create or replace package body Package is
       SELECT BeitMidrashHall.name AS bmhName
         FROM BeitMidrashHall
        WHERE ravID = id; -- where rav is head of beit midrash
-       
+  
     cursor cstudentClass is
-      SELECT DISTINCT class
-      FROM Student
-     WHERE ravID = id;
+      SELECT DISTINCT class FROM Student WHERE ravID = id;
   
     total_salary number;
   
@@ -92,7 +121,7 @@ create or replace package body Package is
     dbms_output.put_line('-----');
   
     dbms_output.put_line('List of beit midrash halls rav teaches in:');
-    
+  
     for rec in cbmhName loop
       dbms_output.put_line(rec.bmhName);
       total_salary := total_salary + SALARY_BMH_COEFICIANT;
@@ -109,6 +138,33 @@ create or replace package body Package is
     SELECT bankAccountNum INTO o_number FROM Rav WHERE Rav.ravID = id;
     dbms_output.put_line('Salary: ' || total_salary ||
                          ' Bank Account Number: ' || o_number);
+  end;
+
+  --Input: ravID
+  --Prints: * times his students are in volenteer, at what orgenization and address, with details
+  procedure ReportWhenVolForRav(id in number) is
+  
+    cursor cstudentVolTime is
+      SELECT Name,
+             organization,
+             dayOfWeek,
+             TimeOfDay,
+             VolunteerGroup.address,
+             details
+        FROM VolunteerGroup
+       INNER JOIN Student
+          ON Student.vgID = VolunteerGroup.vgID
+       WHERE ravID = id;
+  
+  begin
+    for rec in cstudentVolTime loop
+      dbms_output.put_line('Student: ' || rec.name || ' Volunteer in: ' ||
+                           rec.organization || ' in day: ' ||
+                           rec.dayOfWeek || ' at time: ' || rec.timeOfDay ||
+                           ' at address: ' || rec.address);
+      dbms_output.put_line('details: ' || rec.details);
+      dbms_output.put_line('-----');
+    end loop;
   end;
 
 begin
