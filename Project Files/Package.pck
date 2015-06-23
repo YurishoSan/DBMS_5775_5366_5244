@@ -4,15 +4,6 @@ create or replace package Package is
   -- Created : 09/06/2015 23:26:18
   -- Purpose : 
 
-  -- Public type declarations
-  --type <TypeName> is <Datatype>;
-
-  -- Public constant declarations
-  --<ConstantName> constant <Datatype> := <Value>;
-
-  -- Public variable declarations
-  --<VariableName> <Datatype>;
-
   -- Public function and procedure declarations
   function BooksByPublisherStudy(publisher_in in varchar2) return number;
   function SetWomanSectionCapacity(id in number) return number;
