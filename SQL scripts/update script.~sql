@@ -1,0 +1,3 @@
+UPDATE Rav
+SET bankaccoutnum = 08311248543
+WHERE ravID = 154126548;
