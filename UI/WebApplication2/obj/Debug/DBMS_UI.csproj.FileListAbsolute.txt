@@ -1,0 +1,11 @@
+C:\Users\avise_000\Desktop\DBminiProj\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\avise_000\Desktop\DBminiProj\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\avise_000\Desktop\DBminiProj\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\avise_000\Desktop\DBminiProj\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\avise_000\Desktop\DBminiProj\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\bin\WebApplication2.dll
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\bin\WebApplication2.pdb
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\obj\Debug\DBMS_UI.csprojResolveAssemblyReference.cache
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\avise_000\Desktop\DBminiProj\DBMS_5775_5366_5244\UI\WebApplication2\obj\Debug\WebApplication2.pdb
